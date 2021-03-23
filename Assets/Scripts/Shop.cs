@@ -7,12 +7,11 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public int[] price_int;
-    private int price_1=5;
-    private int price_2=10;
-    private int price_3=15;
+
+
     public GameObject scene;
-    public GameObject[] select;
-    public GameObject[] price;
+    public GameObject[] select; //масив выбраных скинов
+    public GameObject[] price; 
     public GameObject[] buttons;
     public GameObject Home_button;
     public GameObject Money_score;
@@ -20,6 +19,7 @@ public class Shop : MonoBehaviour
     public GameObject Loading;
     public Button[] buttonsklick;
     public int skins;
+
     private void Awake() {
         Instantiate(scene);
         for(int i=0;i<select.Length;i++)
@@ -36,7 +36,6 @@ public class Shop : MonoBehaviour
             buttons[i]=GameObject.Find("Button"+i.ToString());
         }
         
-
     }
     void Start()
     {
