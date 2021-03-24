@@ -39,7 +39,7 @@ public class Shop : MonoBehaviour
     }
     void Start()
     {
-        if(PlayerPrefs.GetInt("Skin0")==0 && PlayerPrefs.GetInt("Skin1")==0 && PlayerPrefs.GetInt("Skin2")==0 && PlayerPrefs.GetInt("Skin3")==0)
+        if(PlayerPrefs.GetInt("Skin0")==0 && PlayerPrefs.GetInt("Skin1")==0 && PlayerPrefs.GetInt("Skin2")==0 && PlayerPrefs.GetInt("Skin3")==0 && PlayerPrefs.GetInt("Skin4") == 0 && PlayerPrefs.GetInt("Skin5") == 0 && PlayerPrefs.GetInt("Skin6") == 0 && PlayerPrefs.GetInt("Skin7") == 0 && PlayerPrefs.GetInt("Skin8") == 0 && PlayerPrefs.GetInt("Skin9") == 0)
             PlayerPrefs.SetInt("Skin0",1);
         Money_score=GameObject.Find("Money");
         Home_button=GameObject.Find("Home_button");
@@ -54,7 +54,13 @@ public class Shop : MonoBehaviour
         buttonsklick[1].onClick.AddListener(Skine1);
         buttonsklick[2].onClick.AddListener(Skine2);
         buttonsklick[3].onClick.AddListener(Skine3);
-        Loading=GameObject.Find("Loading");
+        buttonsklick[4].onClick.AddListener(Skine4);
+        buttonsklick[5].onClick.AddListener(Skine5);
+        buttonsklick[6].onClick.AddListener(Skine6);
+        buttonsklick[7].onClick.AddListener(Skine7);
+        buttonsklick[8].onClick.AddListener(Skine8);
+        buttonsklick[9].onClick.AddListener(Skine9);
+        Loading =GameObject.Find("Loading");
         Check();
 
     }
@@ -123,17 +129,45 @@ public class Shop : MonoBehaviour
         }
         }
     }
-    void Skine0(){
+    void Skine0()
+    {
         Skin_set(0);
     }
-    void Skine1(){
+    void Skine1()
+    {
         Skine(1);
     }
-    void Skine2(){
+    void Skine2()
+    {
         Skine(2);
     }
-    void Skine3(){
+    void Skine3()
+    {
         Skine(3);
+    }
+    void Skine4()
+    {
+        Skine(4);
+    }
+    void Skine5()
+    {
+        Skine(5);
+    }
+    void Skine6()
+    {
+        Skine(6);
+    }
+    void Skine7()
+    {
+        Skine(7);
+    }
+    void Skine8()
+    {
+        Skine(8);
+    }
+    void Skine9()
+    {
+        Skine(9);
     }
     void FaileBuy()
     {
