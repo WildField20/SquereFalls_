@@ -217,4 +217,5 @@ MonoBehaviour:
   Restart_score: {fileID: 0}
   Best_score: {fileID: 0}
   Money_scorer: {fileID: 0}
+  Loading: {fileID: 0}
   y: 0

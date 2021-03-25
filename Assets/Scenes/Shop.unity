@@ -202,9 +202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e94026b57ed1c644d8eaee8edd303384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price_int: 00000000050000000a0000000f00000000000000
+  price_int: 00000000050000000a0000000f000000070000001500000012000000060000001000000064000000
   scene: {fileID: 2996858314078981725, guid: 437f6dca24087be4e9012081dd0a70f3, type: 3}
   select:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -216,7 +221,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   buttons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -232,4 +247,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  skins: 5
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  skins: 10
