@@ -771,9 +771,11 @@ MonoBehaviour:
   MSquare: {fileID: 5335376577063296849, guid: 203890bb1969ca74d8a63fe966d5e3f1, type: 3}
   BSquare: {fileID: 12021710736254774, guid: aaefc6320d7f5d24d899c3605901b2c2, type: 3}
   scoreManager: {fileID: 0}
+  RedBoss: {fileID: 1507776523881568156, guid: 55d993ecb277b894085caec82e5b924b, type: 3}
   rand: 0
   a: 0
   b: 0
+  redBoss: 0
   S: 0
   SS: 0
   SSS: 0

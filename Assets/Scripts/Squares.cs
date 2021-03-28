@@ -11,10 +11,11 @@ public class Squares : MonoBehaviour
     public GameObject MSquare;
     public GameObject BSquare;
     public GameObject scoreManager;
+    public GameObject RedBoss;
     public float rand;
     public float a=2;
     public float b=0;
-    //private int[] chance;
+    public int redBoss;
     public int S;
     public int SS ;
     public int SSS ;
@@ -23,20 +24,22 @@ public class Squares : MonoBehaviour
 
     void Start()
     {
-        S=35;
+        redBoss = 85;
+        S =35;
         SS=26;
         SSS=20;
         M=17;
         B=17;
-     scoreManager=GameObject.Find("EventSystem");
-     /*chance = new int[5];
-     chance[0] = 100;
-     */
+        scoreManager=GameObject.Find("EventSystem");
     }
     void AddGameObject()
     {
         rand = Random.Range(0f, 100f);
-        if (rand > S)
+        if(rand > 85)
+        {
+            Instantiate(RedBoss);
+        }
+        else if (rand > S)
             Instantiate(Square);
         else if(rand > SS){
             Instantiate(SSSquare);  // SSSq - большие

@@ -4,28 +4,25 @@ using UnityEngine;
 
 public class RedBoss : Bosses
 {
-    [SerializeField] private bool isSmall = false;
-
     private void Awake()
     {
         SetStartPosition(-3, 3);
         SetEndPosition(-1.4f, 1.4f);
-        SetSpeed(0.2f,0.8f);
     }
     private void FixedUpdate()
     {
         Move();
         Scale();
-        Die();
     }
-
-    public void Scale()
+    private void Scale()
     {
-        const float SmallSize=0.5f;
-        const float BigSize = 2f;
+        public const float SmallSize=0.5f;
+        public const float BigSize = 2f;
         const float ScaleSpeed=0.05f;
 
-        if (isSmall)
+        bool isSmall=false;
+
+        if(isSmall)
         {
             transform.localScale = new Vector2(transform.localScale.x + ScaleSpeed, transform.localScale.y + ScaleSpeed);
         }
