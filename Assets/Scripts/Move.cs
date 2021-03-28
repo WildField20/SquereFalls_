@@ -70,7 +70,12 @@ public class Move : MonoBehaviour
             click=false;
         }
         //If player touch a square 
-        if(call.gameObject.tag == "Square" && !alive)
+        if (call.gameObject.tag == "Square" && !alive)
+        {
+            Destroy(call.gameObject);
+            block();
+        }
+        if (call.gameObject.tag == "Square")
         { 
             Debug.Log(gameObject.transform.position);
             Debug.Log(call.gameObject.transform.position);
@@ -122,7 +127,6 @@ public class Move : MonoBehaviour
             ExpRef_m.transform.position = new Vector2(call.gameObject.transform.position.x,call.gameObject.transform.position.y);
             alive=true;
             Block.SetActive(true);
-            InvokeRepeating("block",15,0f);
             Destroy(call.gameObject); 
         }
 

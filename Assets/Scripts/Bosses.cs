@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bosses
+public class Bosses : MonoBehaviour
 {
-    public GameObject gameObject;
 
     [SerializeField] private float _speed;
     [SerializeField] private Vector2 _startPosition;
@@ -40,7 +39,7 @@ public class Bosses
     }
     public void Move()
     {
-         gameObject.transform.position = Vector3.Lerp(_startPosition, _endPosition, _progress);
+         transform.position = Vector3.Lerp(_startPosition, _endPosition, _progress);
         _progress += _speed;
     }
 }
