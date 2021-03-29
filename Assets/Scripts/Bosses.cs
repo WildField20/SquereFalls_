@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bosses : MonoBehaviour
 {
-
+    [SerializeField] private GameObject[] Skins;
     [SerializeField] private float _speed;
     [SerializeField] private Vector2 _startPosition;
     [SerializeField] private Vector2 _endPosition;
@@ -54,6 +54,13 @@ public class Bosses : MonoBehaviour
         if (_progress > 1)
         {
             Destroy(gameObject);
+        }
+    }
+    public void SetSkin()
+    {
+        for (int i = 0; i < Skins.Length; i++)
+        {
+            Skins[i].SetActive(PlayerPrefs.GetInt("Skin" + i.ToString()) == 1);
         }
     }
 }

@@ -158,10 +158,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0102e845732264e8e66b115b8ef479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Skins:
+  - {fileID: 63429436054473088}
+  - {fileID: 5450680690053723446}
+  - {fileID: 5764045866004928051}
+  - {fileID: 2116594618759495808}
   _speed: 0.01
   _startPosition: {x: 0, y: 5.5}
   _endPosition: {x: 0, y: -5.5}
   _progress: 0
+  isSmall: 0
 --- !u!50 &8753522630649336083
 Rigidbody2D:
   serializedVersion: 4
@@ -256,7 +262,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2570896442641323130, guid: b7a240dee255cfa4797ebce4b7d6662e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8207547, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -339,7 +345,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2570896442641323130, guid: b7a240dee255cfa4797ebce4b7d6662e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8301887, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -422,7 +428,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2570896442641323130, guid: b7a240dee255cfa4797ebce4b7d6662e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

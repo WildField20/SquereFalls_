@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpeedBoss : Bosses
 {
     private void Awake()
-    {   
+    {
+        SetSkin();
         SetSpeed(2f, 4f);
         StartPosition = new Vector2(-3,6);
         EndPosition = new Vector2(3,6 - Random.Range(2, 4));

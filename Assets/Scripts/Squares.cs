@@ -23,6 +23,7 @@ public class Squares : MonoBehaviour
     public int B;
 
     private int _score;
+    private int SpawnCounter=0;
 
     void Start()
     {
@@ -63,8 +64,25 @@ public class Squares : MonoBehaviour
         {
             Instantiate(SSquare); // ssq - очки
         }
-        Debug.Log(_score);
         a=2;
+        if(_score%10>=0 && _score/10> SpawnCounter)
+        {
+            for (int i = 0; i < _score / 10; i++)
+            {
+                Instantiate(SSquare);
+                Instantiate(SSquare);
+                Instantiate(SSquare);
+                Instantiate(MSquare);
+                Instantiate(MSquare);
+                Instantiate(MSquare);
+                Debug.Log("Spawn");
+            }
+            SpawnCounter++;
+        }
+        Debug.Log(_score / 10);
+        Debug.Log("k=");
+        Debug.Log(SpawnCounter);
+        Debug.Log(_score % 10 >= 0 && _score / 10 >SpawnCounter);
         CancelInvoke();
     }
 

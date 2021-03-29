@@ -8,6 +8,7 @@ public class RedBoss : Bosses
 
     private void Awake()
     {
+        SetSkin();
         SetStartPosition(-3, 3);
         SetEndPosition(-1.4f, 1.4f);
         SetSpeed(0.2f,0.8f);
