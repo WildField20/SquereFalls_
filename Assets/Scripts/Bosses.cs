@@ -15,6 +15,11 @@ public class Bosses : MonoBehaviour
         get { return _speed; }
         set { _speed=value; }
     }
+    public float Progress
+    {
+        get { return _progress; }
+        set { _progress = value; }
+    }
     public Vector2 StartPosition
     {
         get { return _startPosition; }
@@ -26,11 +31,11 @@ public class Bosses : MonoBehaviour
         set { _endPosition = value; }
     }
 
-    public void SetStartPosition(float startRange, float endRange)
+    public void  SetStartPosition(float startRange, float endRange)
     {
         _startPosition =new Vector2(Random.Range(startRange,endRange),5.5f);
     }
-    public void SetEndPosition(float startRange, float endRange)
+    public void  SetEndPosition(float startRange, float endRange)
     {
         _endPosition = new Vector2(Random.Range(startRange, endRange), -5.5f);
     }
@@ -46,7 +51,7 @@ public class Bosses : MonoBehaviour
     }
     public virtual void Die()
     {
-        if (_progress > 100)
+        if (_progress > 1)
         {
             Destroy(gameObject);
         }

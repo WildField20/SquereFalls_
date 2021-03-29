@@ -12,19 +12,20 @@ public class Squares : MonoBehaviour
     public GameObject BSquare;
     public GameObject scoreManager;
     public GameObject RedBoss;
+    public GameObject SpeedBoss;
     public float rand;
     public float a=2;
     public float b=0;
-    public int redBoss;
     public int S;
     public int SS ;
     public int SSS ;
     public int M ;
     public int B;
 
+    private int _score;
+
     void Start()
     {
-        redBoss = 85;
         S =35;
         SS=26;
         SSS=20;
@@ -34,25 +35,35 @@ public class Squares : MonoBehaviour
     }
     void AddGameObject()
     {
+        _score = scoreManager.GetComponent<Play>().numbs;
         rand = Random.Range(0f, 100f);
-        if(rand > 85)
+        if (rand > 95 && _score > 30)
         {
             Instantiate(RedBoss);
         }
+        else if (rand > 90 && _score > 40)
+        {
+            Instantiate(SpeedBoss);
+        }
         else if (rand > S)
             Instantiate(Square);
-        else if(rand > SS){
+        else if (rand > SS)
+        {
             Instantiate(SSSquare);  // SSSq - большие
-            Debug.Log(SS);}
-        else if(rand > SSS){
+        }
+        else if (rand > SSS)
+        {
             Instantiate(MSquare);   //MSq - деньги
-            Debug.Log(SSS);}
-        else if(rand > M){
+        }
+        else if (rand > M)
+        {
             Instantiate(BSquare); // bsqr - бессмертие
-            Debug.Log(M);}
-        else if(rand <= B)
+        }
+        else if (rand <= B)
+        {
             Instantiate(SSquare); // ssq - очки
-
+        }
+        Debug.Log(_score);
         a=2;
         CancelInvoke();
     }
