@@ -23,7 +23,6 @@ public class Squares : MonoBehaviour
     public int B;
 
     private int _score;
-    private int SpawnCounter=0;
 
     void Start()
     {
@@ -65,24 +64,19 @@ public class Squares : MonoBehaviour
             Instantiate(SSquare); // ssq - очки
         }
         a=2;
-        if(_score%10>=0 && _score/10> SpawnCounter)
+        if(_score%10>=0 && _score/10> scoreManager.GetComponent<Play>().SpawnCounter)
         {
             for (int i = 0; i < _score / 10; i++)
             {
-                Instantiate(SSquare);
-                Instantiate(SSquare);
-                Instantiate(SSquare);
-                Instantiate(MSquare);
-                Instantiate(MSquare);
-                Instantiate(MSquare);
-                Debug.Log("Spawn");
+                for (int j = 0; j < 3; j++)
+                {
+                    Instantiate(SSquare);
+                    Instantiate(MSquare);
+                }
             }
-            SpawnCounter++;
+            scoreManager.GetComponent<Play>().SpawnCounter++;
         }
-        Debug.Log(_score / 10);
-        Debug.Log("k=");
-        Debug.Log(SpawnCounter);
-        Debug.Log(_score % 10 >= 0 && _score / 10 >SpawnCounter);
+
         CancelInvoke();
     }
 

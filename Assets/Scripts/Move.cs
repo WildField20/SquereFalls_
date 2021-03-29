@@ -17,7 +17,8 @@ public class Move : MonoBehaviour
     private UnityEngine.Object exp;
     private UnityEngine.Object exp_m;
     private UnityEngine.Object exp_s;
-    private UnityEngine.Object exp_r; 
+    private UnityEngine.Object exp_r;
+    private UnityEngine.Object exp_b;
     public GameObject plaing_elements;
     public GameObject Back;
     public GameObject plaing_GUI;
@@ -36,6 +37,7 @@ public class Move : MonoBehaviour
         exp_r=Resources.Load("Exp_r");
         exp_m=Resources.Load("Exp_m");
         exp_s=Resources.Load("Exp_s");
+        exp_b = Resources.Load("Exp_b");
     }
     private void FixedUpdate() {
         rb.velocity=maxVel*speed*Time.fixedDeltaTime;
@@ -70,15 +72,17 @@ public class Move : MonoBehaviour
             click=false;
         }
         //If player touch a square 
-        if (call.gameObject.tag == "Square" && !alive)
+        if (call.gameObject.tag == "Square" && alive)
         {
+            GameObject ExpRef_b = (GameObject)Instantiate(exp_b);
+            ExpRef_b.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             Destroy(call.gameObject);
+            Debug.Log(alive);
             block();
+            Debug.Log(alive);
         }
-        if (call.gameObject.tag == "Square")
+        else if (call.gameObject.tag == "Square")
         { 
-            Debug.Log(gameObject.transform.position);
-            Debug.Log(call.gameObject.transform.position);
             GameObject ExpRef = (GameObject)Instantiate(exp);
             ExpRef.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y);
             call.gameObject.SetActive(false);

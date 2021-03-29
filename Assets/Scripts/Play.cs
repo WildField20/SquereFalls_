@@ -24,6 +24,7 @@ public class Play : MonoBehaviour
     public GameObject Money_scorer;
     public GameObject Loading;
     public float y;
+    public int SpawnCounter = 0;
 
     private void Awake() {
         Instantiate(Scene);
@@ -68,6 +69,7 @@ public class Play : MonoBehaviour
     {
         Debug.Log("Yes");
         numbs=0;
+        SpawnCounter = 0;
         Player.transform.position=(new Vector2(0,-2.84f));
         die=false;
     }
