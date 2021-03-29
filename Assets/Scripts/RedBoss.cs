@@ -18,6 +18,7 @@ public class RedBoss : Bosses
         Move();
         Scale();
         Die();
+        OnRestart();
     }
 
     public void Scale()

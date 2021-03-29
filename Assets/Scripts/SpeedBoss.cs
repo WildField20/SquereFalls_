@@ -16,8 +16,9 @@ public class SpeedBoss : Bosses
         Move();
         NewDestroy();
         ChangeDirection();
+        OnRestart();
     }
-    private void ChangeDirection()
+    public void ChangeDirection()
     {
         if (Progress > 1)
         {
@@ -26,7 +27,7 @@ public class SpeedBoss : Bosses
             Progress = 0;
         }
     }
-    private void NewDestroy()
+    public void NewDestroy()
     {
         if(transform.position.y<-5.5)
         {

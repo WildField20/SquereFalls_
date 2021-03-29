@@ -219,3 +219,4 @@ MonoBehaviour:
   Money_scorer: {fileID: 0}
   Loading: {fileID: 0}
   y: 0
+  SpawnCounter: 0

@@ -773,6 +773,8 @@ MonoBehaviour:
   scoreManager: {fileID: 0}
   RedBoss: {fileID: 1507776523881568156, guid: 55d993ecb277b894085caec82e5b924b, type: 3}
   SpeedBoss: {fileID: 9011111344608092617, guid: d5acf6a600b99e1479386bd109fee16f, type: 3}
+  Panel1: {fileID: 6657523179352179923, guid: 9399157b89d559c47a335564430ac665, type: 3}
+  Panel2: {fileID: 2330296441856510309, guid: 337542d53883d3a4aa951fb0479c3370, type: 3}
   rand: 0
   a: 0
   b: 0

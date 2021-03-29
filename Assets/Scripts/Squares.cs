@@ -13,6 +13,8 @@ public class Squares : MonoBehaviour
     public GameObject scoreManager;
     public GameObject RedBoss;
     public GameObject SpeedBoss;
+    public GameObject Panel1;
+    public GameObject Panel2;
     public float rand;
     public float a=2;
     public float b=0;
@@ -37,16 +39,23 @@ public class Squares : MonoBehaviour
     {
         _score = scoreManager.GetComponent<Play>().numbs;
         rand = Random.Range(0f, 100f);
-        if (rand > 95 && _score > 30)
+        if (rand > 97 && _score > 30)
         {
             Instantiate(RedBoss);
         }
-        else if (rand > 90 && _score > 40)
+        else if (rand > 95 && _score > 40)
         {
             Instantiate(SpeedBoss);
         }
+        else if(rand > 93 && _score > 50)
+        {
+            Instantiate(Panel1);
+            Instantiate(Panel2);
+        }
         else if (rand > S)
+        {
             Instantiate(Square);
+        }
         else if (rand > SS)
         {
             Instantiate(SSSquare);  // SSSq - большие
@@ -68,7 +77,7 @@ public class Squares : MonoBehaviour
         {
             for (int i = 0; i < _score / 10; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 1; j++)
                 {
                     Instantiate(SSquare);
                     Instantiate(MSquare);
@@ -83,7 +92,7 @@ public class Squares : MonoBehaviour
     void Update()
     {
         InvokeRepeating("AddGameObject",a,0);
-        b=scoreManager.GetComponent<Play>().numbs/500f;
+        b=scoreManager.GetComponent<Play>().numbs/1000f;
         a-=b;
     }
 }

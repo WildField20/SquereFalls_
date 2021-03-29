@@ -33,13 +33,12 @@ public class Bosses : MonoBehaviour
 
     public void  SetStartPosition(float startRange, float endRange)
     {
-        _startPosition =new Vector2(Random.Range(startRange,endRange),5.5f);
+        _startPosition =new Vector2(Random.Range(startRange,endRange),6f);
     }
     public void  SetEndPosition(float startRange, float endRange)
     {
-        _endPosition = new Vector2(Random.Range(startRange, endRange), -5.5f);
+        _endPosition = new Vector2(Random.Range(startRange, endRange), -6);
     }
-
     public void Move()
     {
          transform.position = Vector3.Lerp(_startPosition, _endPosition, _progress);
@@ -63,4 +62,12 @@ public class Bosses : MonoBehaviour
             Skins[i].SetActive(PlayerPrefs.GetInt("Skin" + i.ToString()) == 1);
         }
     }
+    public void OnRestart()
+    {
+        if (GameObject.Find("Player") == null)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

@@ -67,7 +67,6 @@ public class Play : MonoBehaviour
     }
     void Restart()
     {
-        Debug.Log("Yes");
         numbs=0;
         SpawnCounter = 0;
         Player.transform.position=(new Vector2(0,-2.84f));

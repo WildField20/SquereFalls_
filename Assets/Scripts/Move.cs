@@ -28,6 +28,7 @@ public class Move : MonoBehaviour
     public bool alive = false;
     public GameObject Block;
     public Vector2 maxVel=new Vector2(1f,0);
+
     void Start()
     {
         SetSkin();
@@ -77,9 +78,7 @@ public class Move : MonoBehaviour
             GameObject ExpRef_b = (GameObject)Instantiate(exp_b);
             ExpRef_b.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
             Destroy(call.gameObject);
-            Debug.Log(alive);
             block();
-            Debug.Log(alive);
         }
         else if (call.gameObject.tag == "Square")
         { 
