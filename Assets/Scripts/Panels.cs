@@ -11,7 +11,6 @@ public class Panels : SpeedBoss
     private void Awake()
     {
         SetSpeed(_speedThis, _speedThis);
-        SetSkin();
         SetStartPosition(_randomRange.x, _randomRange.y);
         SetEndPosition(StartPosition.x, StartPosition.x);
     }

@@ -28,6 +28,7 @@ public class Move : MonoBehaviour
     public bool alive = false;
     public GameObject Block;
     public Vector2 maxVel=new Vector2(1f,0);
+    public float RotationSpeed;
 
     void Start()
     {
@@ -56,6 +57,7 @@ public class Move : MonoBehaviour
             {
                 clik.Play();
                 maxVel=maxVel*-1;
+                RotationSpeed *= -1;
             }
         }
         //If GetKeyDown space
@@ -64,6 +66,7 @@ public class Move : MonoBehaviour
             clik.Play();
             maxVel=maxVel*-1;
         }
+        transform.Rotate(0, 0, RotationSpeed);
     }
     private void OnTriggerStay2D(Collider2D call)
     {
@@ -71,6 +74,7 @@ public class Move : MonoBehaviour
         if(call.gameObject.tag == "Wall" )
         {
             click=false;
+            RotationSpeed *= -1;
         }
         //If player touch a square 
         if (call.gameObject.tag == "Square" && alive)
