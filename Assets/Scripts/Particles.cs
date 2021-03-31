@@ -6,7 +6,7 @@ public class Particles : MonoBehaviour
 {
     private void Start()
     {
-        StartCoroutine(nameof(Destroy));   
+        StartCoroutine(Destroy());   
     }
     private IEnumerator Destroy()
     {
