@@ -15,6 +15,7 @@ public class Squares : MonoBehaviour
     public GameObject SpeedBoss;
     public GameObject Panel1;
     public GameObject Panel2;
+
     public float rand;
     public float a=2;
     public float b=0;
