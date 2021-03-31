@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     private Vector2 a;
     private Vector2 b;
 
+
     void Start()
     {
         SetSkin();
