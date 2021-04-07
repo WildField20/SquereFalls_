@@ -44,14 +44,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 507672814933756926}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d17c33918315e1489f4bb2b928dc110, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a74f4e188a5fa645b5ef9ecef93ba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Skins:
-  - {fileID: 9184497976925693215}
-  - {fileID: 2156956043427846706}
-  - {fileID: 4386908882628896391}
-  - {fileID: 4191424609110669764}
 --- !u!1 &2156956043427846706
 GameObject:
   m_ObjectHideFlags: 0
@@ -14661,7 +14656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7438922564134872853
 Transform:
   m_ObjectHideFlags: 0
