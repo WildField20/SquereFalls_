@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class Loading : MonoBehaviour
 {
     public int SceneID;
-    void Start()
+
+    private void Start()
     {
         StartCoroutine(LoadScene());    
     }
 
-    IEnumerator LoadScene()
+    private IEnumerator LoadScene()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneID);
         while (!operation.isDone)
@@ -19,8 +20,6 @@ public class Loading : MonoBehaviour
             gameObject.transform.Rotate(0,0,10);
             yield return null;
         }
-        
     }
-
 
 }

@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShowFPS : MonoBehaviour
 {
-    public static float fps;
+    private float _fps;
+    private Text _text;
 
-    void OnGUI()
+    private void Start()
     {
-        fps = 1.0f / Time.deltaTime;
-        GUILayout.Label("FPS: " + (int)fps);
+        _text = gameObject.GetComponent<Text>();
+    }
+
+    private void Update()
+    {
+        _fps = 1.0f / Time.deltaTime;
+        _text.text = "FPS "+(int)_fps;
     }
 }
