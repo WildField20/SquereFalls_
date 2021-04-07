@@ -17,7 +17,8 @@ public class Move : MonoBehaviour
     private UnityEngine.Object exp;
     private UnityEngine.Object exp_m;
     private UnityEngine.Object exp_s;
-    private UnityEngine.Object exp_r; 
+    private UnityEngine.Object exp_r;
+    private UnityEngine.Object exp_b;
     public GameObject plaing_elements;
     public GameObject Back;
     public GameObject plaing_GUI;
@@ -27,6 +28,8 @@ public class Move : MonoBehaviour
     public bool alive = false;
     public GameObject Block;
     public Vector2 maxVel=new Vector2(1f,0);
+    public float RotationSpeed;
+
     void Start()
     {
         SetSkin();
@@ -36,6 +39,7 @@ public class Move : MonoBehaviour
         exp_r=Resources.Load("Exp_r");
         exp_m=Resources.Load("Exp_m");
         exp_s=Resources.Load("Exp_s");
+        exp_b = Resources.Load("Exp_b");
     }
     private void FixedUpdate() {
         rb.velocity=maxVel*speed*Time.fixedDeltaTime;
@@ -53,6 +57,7 @@ public class Move : MonoBehaviour
             {
                 clik.Play();
                 maxVel=maxVel*-1;
+                RotationSpeed *= -1;
             }
         }
         //If GetKeyDown space
@@ -61,6 +66,7 @@ public class Move : MonoBehaviour
             clik.Play();
             maxVel=maxVel*-1;
         }
+        transform.Rotate(0, 0, RotationSpeed);
     }
     private void OnTriggerStay2D(Collider2D call)
     {
@@ -68,12 +74,18 @@ public class Move : MonoBehaviour
         if(call.gameObject.tag == "Wall" )
         {
             click=false;
+            RotationSpeed *= -1;
         }
         //If player touch a square 
-        if(call.gameObject.tag == "Square" && !alive)
+        if (call.gameObject.tag == "Square" && alive)
+        {
+            GameObject ExpRef_b = (GameObject)Instantiate(exp_b);
+            ExpRef_b.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y);
+            Destroy(call.gameObject);
+            block();
+        }
+        else if (call.gameObject.tag == "Square")
         { 
-            Debug.Log(gameObject.transform.position);
-            Debug.Log(call.gameObject.transform.position);
             GameObject ExpRef = (GameObject)Instantiate(exp);
             ExpRef.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y);
             call.gameObject.SetActive(false);
@@ -122,7 +134,6 @@ public class Move : MonoBehaviour
             ExpRef_m.transform.position = new Vector2(call.gameObject.transform.position.x,call.gameObject.transform.position.y);
             alive=true;
             Block.SetActive(true);
-            InvokeRepeating("block",15,0f);
             Destroy(call.gameObject); 
         }
 
