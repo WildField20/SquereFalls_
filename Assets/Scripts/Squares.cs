@@ -73,7 +73,7 @@ public class Squares : MonoBehaviour
         {
             Instantiate(SSquare); // ssq - очки
         }
-        a=2;
+        a=1;
         if(_score%10>=0 && _score/10> scoreManager.GetComponent<Play>().SpawnCounter)
         {
             for (int i = 0; i < _score / 10; i++)
@@ -93,7 +93,7 @@ public class Squares : MonoBehaviour
     void Update()
     {
         InvokeRepeating("AddGameObject",a,0);
-        b=scoreManager.GetComponent<Play>().numbs/1000f;
+        b=scoreManager.GetComponent<Play>().numbs/2000f;
         a-=b;
     }
 }

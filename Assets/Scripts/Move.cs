@@ -14,6 +14,7 @@ public class Move : MonoBehaviour
     public GameObject Event_sys;
     public GameObject squares_spawn;
     public GameObject scoreManager;
+    private UnityEngine.Object dollar;
     private UnityEngine.Object exp;
     private UnityEngine.Object exp_m;
     private UnityEngine.Object exp_s;
@@ -35,7 +36,8 @@ public class Move : MonoBehaviour
         SetSkin();
         scoreManager=GameObject.Find("EventSystem");
         Event_sys=GameObject.Find("EventSystem");
-        exp=Resources.Load("Exp");
+        dollar = Resources.Load("Dollar");
+        exp =Resources.Load("Exp");
         exp_r=Resources.Load("Exp_r");
         exp_m=Resources.Load("Exp_m");
         exp_s=Resources.Load("Exp_s");
@@ -122,6 +124,8 @@ public class Move : MonoBehaviour
             colector.Play(); 
             GameObject ExpRef_m = (GameObject)Instantiate(exp_m);
             ExpRef_m.transform.position = new Vector2(call.gameObject.transform.position.x,call.gameObject.transform.position.y);
+            GameObject Dollar = (GameObject)Instantiate(dollar);
+            Dollar.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y);
             scoreManager.GetComponent<Play>().money+=1;
             Destroy(call.gameObject); 
             PlayerPrefs.SetInt("Money",PlayerPrefs.GetInt("Money")+scoreManager.GetComponent<Play>().money);

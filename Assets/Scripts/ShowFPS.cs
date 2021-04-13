@@ -5,17 +5,37 @@ using UnityEngine.UI;
 
 public class ShowFPS : MonoBehaviour
 {
-    private float _fps;
-    private Text _text;
+
+    public float timer, refresh, avgFramerate;
+    string display = "{0} FPS";
+    private Text m_Text;
 
     private void Start()
     {
-        _text = gameObject.GetComponent<Text>();
+        m_Text = GetComponent<Text>();
     }
+
 
     private void Update()
     {
-        _fps = 1.0f / Time.deltaTime;
-        _text.text = "FPS "+(int)_fps;
+        //Change smoothDeltaTime to deltaTime or fixedDeltaTime to see the difference
+        float timelapse = Time.smoothDeltaTime;
+        /*        if (timer <= 0)
+                {
+                    timer = refresh;
+                }
+                else
+                {
+                    timer -= timelapse;
+                }
+        */
+        timer = timer <= 0 ? refresh : timer -= timelapse;
+
+        if (timer <= 0)
+        {
+            avgFramerate = (int)(1f / timelapse);
+        }
+
+        m_Text.text = string.Format(display, avgFramerate.ToString());
     }
 }

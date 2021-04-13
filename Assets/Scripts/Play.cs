@@ -42,7 +42,8 @@ public class Play : MonoBehaviour
     }
     void Start()
     {
-        die=false;
+        Application.targetFrameRate = 60;
+        die =false;
         Pause_is=false;
         Playing_scores= GameObject.Find("Playing_scores");
         Button rs = Resume_button.GetComponent<Button>();
