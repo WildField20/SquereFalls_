@@ -126,7 +126,7 @@ public class Move : MonoBehaviour
             ExpRef_m.transform.position = new Vector2(call.gameObject.transform.position.x,call.gameObject.transform.position.y);
             GameObject Dollar = (GameObject)Instantiate(dollar);
             Dollar.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y);
-            scoreManager.GetComponent<Play>().money+=1;
+            scoreManager.GetComponent<Play>().money+=1000;
             Destroy(call.gameObject); 
             PlayerPrefs.SetInt("Money",PlayerPrefs.GetInt("Money")+scoreManager.GetComponent<Play>().money);
             scoreManager.GetComponent<Play>().money=0;

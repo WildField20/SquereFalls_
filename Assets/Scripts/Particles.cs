@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Particles : MonoBehaviour
 {
+    private void Update()
+    {
+        OnRestart();
+    }
     private void Start()
     {
         StartCoroutine(Destroy());   
@@ -12,5 +16,12 @@ public class Particles : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+    public void OnRestart()
+    {
+        if (GameObject.Find("Player") == null)
+        {
+            Destroy(gameObject);
+        }
     }
 }
